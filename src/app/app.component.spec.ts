@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ngxBootstarp'`, () => {
+  it(`should have as title 'fullPjt'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('ngxBootstarp');
+    expect(app.title).toEqual('fullPjt');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('ngxBootstarp app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('fullPjt app is running!');
   });
 });

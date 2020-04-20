@@ -1,26 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {FormsModule,ReactiveFormsModule} from '@angular/forms'
+import {HttpClientModule  } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from "@angular/common/http"
+import { HomeComponent } from './home/home.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
-//myimports
+import { FetchRecordsComponent } from './fetch-records/fetch-records.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
-import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    SignInComponent,
+    SignUpComponent,
+    FetchRecordsComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PaginationModule.forRoot(),
     FormsModule,
-    NgxPaginationModule,
-    HttpClientModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    PaginationModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
