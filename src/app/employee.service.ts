@@ -9,9 +9,13 @@ export class EmployeeService {
   constructor(private httpClient:HttpClient) { }
 
   getJSONData(data):Observable<any>{
+    console.log("IIn serivce",data)
     return this.httpClient.post("http://localhost:3000/admin/fetchRecordsWithMssql",{
       "pageNum":data.pageNum,
-      "NoOfRecords":data.NoOfRecords
+      "NoOfRecords":data.NoOfRecords,
+      sort:data.sortParamtersFinal,
+      requiredColumns:data.requiredColumnsListFinal,
+      filters:data.filterColumnsList
     })
   }
   

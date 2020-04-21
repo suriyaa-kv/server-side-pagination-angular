@@ -15,11 +15,14 @@
             <a class="nav-link js-scroll-trigger" routerLink='/fetchRecords'>Fetch Records</a>
           </li>
           <li *ngIf="!isLoggedIn" [(ngModel)]="isLoggedIn" class="nav-item">
-            <a class="nav-link js-scroll-trigger" routerLink='/signin'>SignIn</a>
+            <a class="nav-link js-scroll-trigger" (onHide)="changeHide($event)" routerLink='/signin'>SignIn</a>
           </li>
           <li *ngIf="!isLoggedIn"  [(ngModel)]="isLoggedIn" class="nav-item">
             <a class="nav-link js-scroll-trigger" routerLink='/signup'>SignUp</a>
           </li>
+          <!-- <li *ngIf="!isLoggedIn"  [(ngModel)]="isLoggedIn" class="nav-item">
+            <app-sign-in></app-sign-in>
+          </li> -->
           <li *ngIf="isLoggedIn" [(ngModel)]="isLoggedIn" class="nav-item">
             <a (click)="signOut()" class="nav-link js-scroll-trigger">SignOut</a>
           </li>

@@ -11,8 +11,11 @@ export class SignInComponent implements OnInit {
 
   constructor(private userService:UserService,private router:Router) { }
 
+  @Output() onHide = new EventEmitter<boolean>();
+
   ngOnInit() {
   }
+  isLofon=true;
   signInForm=new FormGroup({
     email:new FormControl(),
     password:new FormControl()
@@ -22,6 +25,9 @@ validateData(){
   this.userService.validateUser(this.signInForm.value).subscribe(data=>{
     console.log("data",data)
     localStorage.setItem('data',JSON.stringify(data))
+
+    this.onHide.emit(true)
+   
     console.log(JSON.parse(localStorage.getItem('data')))
   })
 

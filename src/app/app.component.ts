@@ -19,6 +19,7 @@ export class AppComponent implements OnInit{
 
   changeHide(val: boolean) {
     this.isLoggedIn = val;
+    console.log(this.isLoggedIn)
   }
 
   signOut(){

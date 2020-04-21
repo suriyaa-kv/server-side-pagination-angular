@@ -10,6 +10,9 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 
 import { FetchRecordsComponent } from './fetch-records/fetch-records.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ModalComponent } from './modal/modal.component';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,8 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     SignInComponent,
     SignUpComponent,
     FetchRecordsComponent,
+    ModalComponent,
+    FilterComponent,
     
   ],
   imports: [
@@ -26,7 +31,8 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
